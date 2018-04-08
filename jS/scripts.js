@@ -44,9 +44,11 @@ $(document).ready(function() {
     var user1 = new player(playerOneName);
     var user2 = new player(playerTwoName);
 
+    $("#nameStyle1").text(playerOneName);
+        $("#nameStyle2").text(playerTwoName);
+
     $("button#rolledDice1").click(function() {
       var rolledDice1 = user1.roll();
-      $("#userOne").text(playerOneName);
       if (rolledDice1 === 1) {
         $("#userOne").addClass("panel-disable");
         $("button#rolledDice1").addClass("button-disable");
