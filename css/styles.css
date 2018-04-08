@@ -16,3 +16,12 @@ font-family: 'Cookie', cursive;
   padding: 2%;
 
 }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+.gamescreen {
+  display: none;
+}
