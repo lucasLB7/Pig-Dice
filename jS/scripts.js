@@ -1,3 +1,6 @@
+// BACKEND OF THE PROGRAM WE KEEP IT SIMPLE
+
+
 var player = function(name) {
   this.name = name;
   this.cacheScore = 0;
@@ -14,9 +17,9 @@ player.prototype.roll = function() {
   return rollDice;
 }
 player.prototype.hold = function() {
-  this.totalScore += this.cacheScore;
+  this.cacheScore += this.totalScore;
   this.cacheScore = 0;
-  return cacheScore;
+  return totalScore;
 }
 
 
@@ -25,7 +28,8 @@ player.prototype.hold = function() {
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
-
+// FRONT END. HERE WE DO MOST OF THE WORK FROM HIDDING & DISPLAYING PANELS
+// TOBDEFINING WHAT HAPPENS WITH EACH BUTTON
 
 $(document).ready(function() {
   $("form#playerNameInput").submit(function(event) {
@@ -42,6 +46,7 @@ $(document).ready(function() {
 
     $("button#rolledDice1").click(function() {
       var rolledDice1 = user1.roll();
+      $("user1").text(playerOneName);
       if (rolledDice1 === 1) {
         $("#userOne").addClass("panel-disable");
         $("button#rolledDice1").addClass("button-disable");
@@ -58,9 +63,14 @@ $(document).ready(function() {
       }
       else {
         var cacheScore1 = user1.cacheScore;
-        $("#player1session").text("Session scrore is "+cacheScore1+"!");
+        $("#player1ession").text("Session scrore is "+cacheScore1+"!");
       }
     });
 
   });
 });
+
+function turnDice() {
+  var img = document.getElementById("image");
+  img.setAttribute("class", "rotated-image");
+}

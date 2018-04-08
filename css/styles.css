@@ -24,4 +24,28 @@ font-family: 'Cookie', cursive;
 }
 .gamescreen {
   display: none;
+  width: 90%;
+}
+
+.formgame {
+  background-color: pink;
+}
+
+
+.formgame h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size:100px;
+}
+
+
+.diceImg img {
+  width: 50%;
+  height: 50%;
+  padding: 2%;
+}
+
+
+.rotated-image {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
 }
