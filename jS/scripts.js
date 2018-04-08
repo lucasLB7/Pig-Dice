@@ -46,7 +46,7 @@ $(document).ready(function() {
 
     $("button#rolledDice1").click(function() {
       var rolledDice1 = user1.roll();
-      $("user1").text(playerOneName);
+      $("#userOne").text(playerOneName);
       if (rolledDice1 === 1) {
         $("#userOne").addClass("panel-disable");
         $("button#rolledDice1").addClass("button-disable");

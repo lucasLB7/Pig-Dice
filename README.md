@@ -10,6 +10,13 @@ The concept was to have an online game of __PIG DICE__.
 GAMES RULES:
     - Pig dice is a game that uses __random numbers__, where chance and a players decisions to reach a maximum score.
     - The __max score__ is set in the opening screen.
-    - 
+    -
 ---
-Pig dice is a game that uses random numbers, where chance and a players decisions to reach a
+
+The front end of the website is pretty basic, with two different div boxes that appear at different times based on a user input.
+
+We first have the log in screen which uses forms and click-listeners to store the values of the players (one & two) as well as the preferred max score..
+
+On click, the login pages disappears & a new page is displayed with the actual game.
+
+![Alt text](/img/screeshot.png)
