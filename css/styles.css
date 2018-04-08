@@ -49,3 +49,7 @@ font-family: 'Cookie', cursive;
   -webkit-transform: rotate(20deg);
           transform: rotate(20deg);
 }
+
+.player1Score {
+  font-family: 'Great Vibes', cursive;
+}
