@@ -77,7 +77,7 @@ $(document).ready(function(formSubmit) {
       $("#player1session").text("Session scrore is "+cacheScore1+"!");
       $("#player1Rolled").text("You have rolled: "+rolledDice1+"!");
         var total1 = user1.totalScore;
-      $("#player1Score").text("Your total score is: "+total1+"!");
+      $("#player1Score").text("Cumulative score is: "+total1+"!");
 
       if (rolledDice1 === 1) {
         $("#userOne").addClass("panel-disable");
@@ -100,7 +100,7 @@ $(document).ready(function(formSubmit) {
       var totalDice1 = user1.hold();
       $("#player1Score").text("Your total score is: "+totalDice1+"!");
       var cacheScore1 = user1.cacheScore;
-      $("#player1session").text("Session scrore is "+cacheScore1+"!");
+      $("#player1session").text("Cumulative score is "+cacheScore1+"!");
 
       if(totalDice1 >= maxScore) {
         alert(user1.name+" has won the game!");
@@ -124,7 +124,7 @@ $(document).ready(function(formSubmit) {
       $("#player2session").text("Session scrore is "+cacheScore2+"!");
       $("#player2Rolled").text("You have rolled: "+rolledDice2+"!");
         var total2 = user2.totalScore;
-      $("#player2Score").text("Your total score is: "+total2+"!");
+      $("#player2Score").text("Cumulative score is: "+total2+"!");
 
       if (rolledDice2 === 1) {
         $("#userTwo").addClass("panel-disable");
@@ -147,7 +147,7 @@ $(document).ready(function(formSubmit) {
       var totalDice2 = user2.hold();
       $("#player2Score").text("Your total score is: "+totalDice2+"!");
       var cacheScore2 = user1.cacheScore;
-      $("#player2session").text("Session scrore is "+cacheScore2+"!");
+      $("#player2session").text("Cumulative score is "+cacheScore2+"!");
 
       if(totalDice2 >= maxScore) {
         alert(user1.name+" has won the game!")
