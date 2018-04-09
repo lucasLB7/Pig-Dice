@@ -38,7 +38,7 @@ HERE WE CREATE THE INITIAL FORM THAT WILL REQUEST THE NAMES THE PLAYERS & TOTAL 
   <div class="jumbotron col-centered gamescreen">
     <h1>Pig Dice</h1>
     <div class="row">
-
+      <!-- player 1-->
       <div class="col-md-6 panel" id="userOne">
         <h1 id="nameStyle1"></h1>
         <button class="btn btn-large btn-danger" name="rollButton" id="rolledDice1">ROLL DICE</button>
@@ -52,24 +52,15 @@ HERE WE CREATE THE INITIAL FORM THAT WILL REQUEST THE NAMES THE PLAYERS & TOTAL 
 
 
       <!-- player 2 -->
-      <div class="panel">
-        <div class="col-md-6 panel panel-disable" id="userTwo">
-          <h1 id="nameStyle2"></h1>
-          <button class="btn btn-large btn-danger button-disable" name="rollButton" onclick="turnDice()" id="rolledDice2">ROLL DICE</button>
-          <button class="btn btn-large btn-success button-disable" name="holdButton" id="holdDice2">HOLD SCORE</button>
-          <div id="player2Score">
-            <h2>Your score: </h2>
-            <h3></h3>
-          </div>
-          <div id="player2Rolled">
-            <h2>You rolled: </h2>
-            <h3></h3>
-          </div>
-          <div id="player2session">
-            <h2>Session: </h2>
-            <h3></h3>
-          </div>
-        </div>
+      <div class="col-md-6 panel" id="userTwo">
+        <h1 id="nameStyle2"></h1>
+        <button class="btn btn-large btn-danger" name="rollButton" id="rolledDice2">ROLL DICE</button>
+        <button class="btn btn-large btn-success" name="holdButton" id="holdDice2">HOLD SCORE</button>
+
+        <div id="player2Score"></div>
+        <div id="player2Rolled"></div>
+        <div id="player2session"></div>
+      </div>
         <section id="middle">
           <img id="image" class="diceImg" src="img/redDice.png">
         </section>

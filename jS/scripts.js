@@ -41,24 +41,27 @@ player.prototype.hold = function() {
 // FRONT END. HERE WE DO MOST OF THE WORK FROM HIDDING & DISPLAYING PANELS
 // TOBDEFINING WHAT HAPPENS WITH EACH BUTTON
 
-$(document).ready(function() {
+$(document).ready(function(formSubmit) {
   $("form#playerNameInput").submit(function(event) {
+    var playerOneName = $("input#p1Name").val();
+    var playerTwoName = $("input#p2Name").val();
+    var maxScore = parseInt($("#maxScore").val());
+    if (playerOneName === "" ){
+
+    alert("Please fill the form");
+    }
+    else {
     $(".gamescreen").show();
     $(".formgame").hide();
+  }
 // WE HAVE STATED THAT WE WANT TO HIDE THE FORM (formgame)
 
     event.preventDefault();
 
 
-    var playerOneName = $("input#p1Name").val();
-    var playerTwoName = $("input#p2Name").val();
-    var maxScore = parseInt($("#maxScore").val());
 
     var user1 = new player(playerOneName);
     var user2 = new player(playerTwoName);
-
-
-
     $("#nameStyle1").text(playerOneName);
     $("#nameStyle2").text(playerTwoName);
 // WE PRINT THE VALUES OF PLAYER ONE & TWO ON THE WEBPAGE
@@ -66,8 +69,11 @@ $(document).ready(function() {
 
 
     $("button#rolledDice1").click(function() {
+
       var rolledDice1 = user1.roll();
       var cacheScore1 = user1.cacheScore;
+
+
       $("#player1session").text("Session scrore is "+cacheScore1+"!");
       $("#player1Rolled").text("You have rolled: "+rolledDice1+"!");
         var total1 = user1.totalScore;
@@ -96,14 +102,14 @@ $(document).ready(function() {
       var cacheScore1 = user1.cacheScore;
       $("#player1session").text("Session scrore is "+cacheScore1+"!");
 
-      if(totalDice1 === 20) {
-        alert(user1.name+" has won the game!")
+      if(totalDice1 >= maxScore) {
+        alert(user1.name+" has won the game!");
+
       }
       else {
         $("#userOne").addClass("panel-disable");
         $("button#rolledDice1").addClass("button-disable");
         $("#holdDice1").addClass("button-disable")
-
         $("#userTwo").removeClass("panel-disable");
         $("button#rolledDice2").removeClass("button-disable");
         $("#holdDice2").removeClass("button-disable")
@@ -112,6 +118,48 @@ $(document).ready(function() {
 
 
     });
+    $("button#rolledDice2").click(function() {
+      var rolledDice2 = user2.roll();
+      var cacheScore2 = user2.cacheScore;
+      $("#player2session").text("Session scrore is "+cacheScore2+"!");
+      $("#player2Rolled").text("You have rolled: "+rolledDice2+"!");
+        var total2 = user2.totalScore;
+      $("#player2Score").text("Your total score is: "+total2+"!");
 
+      if (rolledDice2 === 1) {
+        $("#userTwo").addClass("panel-disable");
+        $("button#rolledDice2").addClass("button-disable");
+        $("#holdDice2").addClass("button-disable")
+
+        $("#userOne").removeClass("panel-disable");
+        $("button#rolledDice1").removeClass("button-disable");
+        $("#holdDice1").removeClass("button-disable")
+
+      }
+      else {
+        var cacheScore2 = user2.cacheScore;
+        $("#player2ession").text("Session scrore is "+cacheScore2+"!");
+      }
+    });
+
+
+    $("button#holdDice2").click(function() {
+      var totalDice2 = user2.hold();
+      $("#player2Score").text("Your total score is: "+totalDice2+"!");
+      var cacheScore2 = user1.cacheScore;
+      $("#player2session").text("Session scrore is "+cacheScore2+"!");
+
+      if(totalDice2 >= maxScore) {
+        alert(user1.name+" has won the game!")
+      }
+      else {
+        $("#userTwo").addClass("panel-disable");
+        $("button#rolledDice2").addClass("button-disable");
+        $("#holdDice2").addClass("button-disable")
+        $("#userOne").removeClass("panel-disable");
+        $("button#rolledDice1").removeClass("button-disable");
+        $("#holdDice1").removeClass("button-disable")
+      }
+    });
   });
 });
