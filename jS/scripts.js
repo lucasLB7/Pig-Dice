@@ -15,22 +15,21 @@ player.prototype.roll = function() {
 // AND WHAT HAPPENS ACCORDINGLY
   if (rollDice === 1) {
     this.cacheScore = 0;
-    return this.cacheScore;
+    return rollDice;
   }
   else {
     this.cacheScore += rollDice;
     console.log(this.cacheScore);
     console.log(rollDice);
   }
-  return this.cacheScore;
+  return rollDice;
 }
 
 
 player.prototype.hold = function() {
-
   this.totalScore += this.cacheScore;
   this.cacheScore = 0;
-  return totalScore;
+  return this.totalScore;
 }
 
 
@@ -68,7 +67,8 @@ $(document).ready(function() {
 
     $("button#rolledDice1").click(function() {
       var rolledDice1 = user1.roll();
-
+      var cacheScore1 = user1.cacheScore;
+      $("#player1session").text("Session scrore is "+cacheScore1+"!");
       $("#player1Rolled").text("You have rolled: "+rolledDice1+"!");
         var total1 = user1.totalScore;
       $("#player1Score").text("Your total score is: "+total1+"!");
@@ -90,10 +90,25 @@ $(document).ready(function() {
     });
 
 
-
-
     $("button#holdDice1").click(function() {
-      var holdDice1 = user1.hold();
+      var totalDice1 = user1.hold();
+      $("#player1Score").text("Your total score is: "+totalDice1+"!");
+      var cacheScore1 = user1.cacheScore;
+      $("#player1session").text("Session scrore is "+cacheScore1+"!");
+
+      if(totalDice1 === 20) {
+        alert(user1.name+" has won the game!")
+      }
+      else {
+        $("#userOne").addClass("panel-disable");
+        $("button#rolledDice1").addClass("button-disable");
+        $("#holdDice1").addClass("button-disable")
+
+        $("#userTwo").removeClass("panel-disable");
+        $("button#rolledDice2").removeClass("button-disable");
+        $("#holdDice2").removeClass("button-disable")
+      }
+
 
 
     });
