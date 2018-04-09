@@ -56,7 +56,7 @@ font-family: 'Cookie', cursive;
 
 .button-disable {
   cursor: not-allowed;
-  filter: alpha(opacity=50);
+  filter: alpha(opacity=50%);
   -webkit-box-shadow:none;
           box-shadow: none;
   opacity: .9;

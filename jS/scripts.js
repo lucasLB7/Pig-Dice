@@ -46,7 +46,7 @@ $(document).ready(function(formSubmit) {
     var playerOneName = $("input#p1Name").val();
     var playerTwoName = $("input#p2Name").val();
     var maxScore = parseInt($("#maxScore").val());
-    if (playerOneName === "" ){
+    if (playerOneName === ""){
 
     alert("Please fill the form");
     }
