@@ -12,5 +12,13 @@ header-includes:
 
 The concept was to have an online game of __PIG DICE__.
 
-\RULES{Of the Game...}
-Pig dice is a game that uses random numbers, where chance and a players decisions to reach a 
+\ RULES{Of the Game...}
+Pig dice is a game that uses random numbers, where chance and a players decisions to reach a predefined number.
+
+## How it works ##
+
+The concept revolves around chances, using a variable to determine the result of a rolled dice.
+
+__If the dice roll__ is equal to __one__, the game switches players and nullifies any added score the player might has accumulated before the dice was rolled.
+
+Otherwise, as long as the dice roll equals 2 to 6, the game keep the turn on the player until the player chooses to "hold", which stores the accumulated score & passes the turn to the next player.
