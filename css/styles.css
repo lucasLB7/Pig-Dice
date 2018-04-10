@@ -7,6 +7,18 @@ font-family: 'Black And White Picture', sans-serif;
 font-family: 'Cookie', cursive;
 */
 
+
+
+
+/*Let's define the two divs. */
+.gamescreen {
+  display: none;
+  width: 90%;
+}
+
+.formgame {
+  background-color: red;
+}
 .pigsHead h1 {
   font-family: 'Dancing Script', cursive;
   font-size:100px;
@@ -21,20 +33,21 @@ font-family: 'Cookie', cursive;
     float: none;
     margin: 0 auto;
     text-align: center;
-}
-.gamescreen {
-  display: none;
-  width: 90%;
+    margin-top: 3%;
 }
 
-.formgame {
-  background-color: pink;
-}
 
 
 .formgame h1 {
   font-family: 'Dancing Script', cursive;
   font-size:100px;
+  color: white;
+}
+
+.formgame h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size:60px;
+  color: white;
 }
 
 
@@ -56,9 +69,32 @@ font-family: 'Cookie', cursive;
 
 .button-disable {
   cursor: not-allowed;
-  filter: alpha(opacity=50%);
+  filter: alpha(opacity=50);
   -webkit-box-shadow:none;
           box-shadow: none;
-  opacity: .9;
+  opacity: .2;
   pointer-events: none;
+}
+#middle {
+  background-color: blue;
+}
+
+
+#player1Rolled {
+  font-family: 'Black And White Picture', sans-serif;
+  font-size: 40px;
+}
+#player2Rolled {
+  font-family: 'Black And White Picture', sans-serif;
+  font-size: 40px;
+}
+#player1Score {
+font-family: 'Cookie', cursive;
+  font-size: 30px;
+  color: red;
+}
+#player2Score {
+font-family: 'Cookie', cursive;
+  font-size: 30px;
+  color: red;
 }

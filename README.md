@@ -1,4 +1,10 @@
-
+---
+header-includes:
+    - \usepackage[most]{tcolorbox}
+    - \definecolor{light-yellow}{rgb}{1, 0.95, 0.7}
+    - \newtcolorbox{myquote}{colback=light-yellow,grow to right by=-10mm,grow to left by=-10mm, boxrule=0pt,boxsep=0pt,breakable}
+    - \newcommand{\todo}[1]{\begin{myquote} \textbf{TODO:} \emph{#1} \end{myquote}}
+---
 
 ## PIG DICE ##
 ### PROJECT BY LUCAS LAMBERT ###
@@ -6,20 +12,13 @@
 
 The concept was to have an online game of __PIG DICE__.
 
----
-GAMES RULES:
-    - Pig dice is a game that uses __random numbers__, where chance and a players decisions to reach a maximum score.
-    - The __max score__ is set in the opening screen.
-    -
----
+\ RULES{Of the Game...}
+Pig dice is a game that uses random numbers, where chance and a players decisions to reach a predefined number.
 
-The front end of the website is pretty basic, with two different div boxes that appear at different times based on a user input.
+## How it works ##
 
-We first have the log in screen which uses forms and click-listeners to store the values of the players (one & two) as well as the preferred max score..
-The names of the players are stored and shown in the game table...
+The concept revolves around chances, using a variable to determine the result of a rolled dice.
 
-On click, the login pages disappears & a new page is displayed with the actual game.
+__If the dice roll__ is equal to __one__, the game switches players and nullifies any added score the player might has accumulated before the dice was rolled.
 
-![Alt text](/img/screeshot.png)
-
-This is a screen-shot of the website (not yet complete) on my local storage.
+Otherwise, as long as the dice roll equals 2 to 6, the game keep the turn on the player until the player chooses to "hold", which stores the accumulated score & passes the turn to the next player.
